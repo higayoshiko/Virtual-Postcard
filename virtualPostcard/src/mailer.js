@@ -1,14 +1,13 @@
-require('dotenv').config();
-
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 //same as const google = require('googleapis').google;
-const {google} = require('googleapis');
+import {google} from 'googleapis';
+
+import {} from 'dotenv/config';
 
 const CLIENT_ID = '903009686024-2k3gttt60j3ndld0f7eqpj1nk05bpk5v.apps.googleusercontent.com';
 const CLIENT_SECRET = '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';
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
 const REFRESH_TOKEN = '1//04oofkG1o7hOLCgYIARAAGAQSNwF-L9IrQUa2K_Dx5IcbaI4uXpkHPMXDwfY7NuMeFh0VZEvt2f-wW1AOGWoahdQHtDotsj1JmUI';
-
 
 //OAuth2 allows you to make API calls on behalf of the user
 const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
@@ -22,7 +21,7 @@ async function sendMail() {
     const accessToken = await oAuth2Client.getAccessToken();
 
     //setup the smtp(to send/receive mail) transport
-    var transport = nodemailer.createTransport({
+    const transport = nodemailer.createTransport({
       service: 'gmail',
       port: 587,
       auth: {
