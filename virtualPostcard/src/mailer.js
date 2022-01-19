@@ -2,18 +2,15 @@ import nodemailer from 'nodemailer';
 //same as const google = require('googleapis').google;
 import {google} from 'googleapis';
 
-import {} from 'dotenv/config';
+import dotenv from 'dotenv';
+dotenv.config({ path: '../.env'});
 
-const CLIENT_ID = '903009686024-2k3gttt60j3ndld0f7eqpj1nk05bpk5v.apps.googleusercontent.com';
-const CLIENT_SECRET = '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';
-const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
-const REFRESH_TOKEN = '1//04oofkG1o7hOLCgYIARAAGAQSNwF-L9IrQUa2K_Dx5IcbaI4uXpkHPMXDwfY7NuMeFh0VZEvt2f-wW1AOGWoahdQHtDotsj1JmUI';
 
 //OAuth2 allows you to make API calls on behalf of the user
-const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
+const oAuth2Client = new google.auth.OAuth2(process.env.OAUTH_CLIENTID, process.env.OAUTH_CLIENT_SECRET, process.env.OAUTH_REDIRECT_URI);
 
 //set refresh_token at a later time
-oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN});
+oAuth2Client.setCredentials({refresh_token: process.env.OAUTH_REFRESH_TOKEN});
 
 async function sendMail() {
   try {
@@ -26,10 +23,11 @@ async function sendMail() {
       port: 587,
       auth: {
         type: 'OAuth2',
-        user: "virtualpostcard12@gmail.com",
-        clientId : CLIENT_ID,
-        clientSecret : CLIENT_SECRET,
-        refreshToken: REFRESH_TOKEN,
+        user: process.env.EMAIL,
+        pass: process.env.WORD,
+        clientId : process.env.OAUTH_CLIENTID,
+        clientSecret : process.env.OAUTH_CLIENT_SECRET,
+        refreshToken: process.env.OAUTH_REFRESH_TOKEN,
         accessToken: accessToken
       }
     });
