@@ -1,0 +1,17 @@
+{
+  "name": "virtual Postcard",
+  "version": "1.0.0",
+  "description": "backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^14.2.0",
+    "googleapis": "^92.0.0",
+    "nodemailer": "^6.7.2"
+  },
+  "type": "module"
+}
