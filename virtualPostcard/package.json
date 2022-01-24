@@ -2,10 +2,12 @@
   "name": "template",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.25.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -20,7 +22,9 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:react/recommended",
+      "eslint:recommended"
     ]
   },
   "browserslist": {
@@ -35,5 +39,8 @@
       "last 1 safari version"
     ]
   },
-    "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "eslint-plugin-react": "^7.28.0"
+  }
 }
