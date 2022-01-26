@@ -1,0 +1,13 @@
+.login {
+  align-items: center;
+  text-align: center;
+  margin-top: 2em;
+}
+.ul {
+  margin: 0;
+  padding: 0;
+}
+.li {
+  float: left;
+  list-style: none;
+}
