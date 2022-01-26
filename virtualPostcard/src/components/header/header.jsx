@@ -1,8 +1,8 @@
 import React from "react";
-import Login from "../login/login";
+
 import styles from "./header.module.css";
 
-const Header = ({ authService }) => {
+const Header = ({ onLogOut }) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -10,12 +10,12 @@ const Header = ({ authService }) => {
         {/* install font awesome */}
         <h1>virtual postcard</h1>
       </div>
-
-      <div className={styles.login}>
-        <Login authService={authService} />
-      </div>
-
-      <button className={styles.logoutBtn}>logout</button>
+      <div className={styles.login}></div>
+      {onLogOut && (
+        <button onClick={onLogOut} className={styles.logoutBtn}>
+          Logout
+        </button>
+      )}
     </header>
   );
 };

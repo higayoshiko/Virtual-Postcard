@@ -3,9 +3,19 @@ import { useNavigate } from "react-router";
 import Header from "../header/header";
 
 const SavedPostCard = ({ authService }) => {
+  const navigate = useNavigate();
+
   const onLogOut = () => {
     authService.logout();
   };
+
+  useEffect(() => {
+    authService.onAuthChange((user) => {
+      if (!user) {
+        navigate("/");
+      }
+    });
+  });
 
   return (
     <>

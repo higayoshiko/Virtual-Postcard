@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
 import styles from "./login.module.css";
 
@@ -13,6 +13,12 @@ const Login = ({ authService }) => {
       .login(event.currentTarget.textContent) // provider name
       .then((data) => goToSave(data.user.uid));
   };
+
+  useEffect(() => {
+    authService.onAuthChange((user) => {
+      user && goToSave(user.id); // no user = null
+    });
+  });
 
   return (
     <section className={styles.login}>
