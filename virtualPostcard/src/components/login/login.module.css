@@ -20,5 +20,6 @@
   font-weight: bold;
 }
 .btn:hover {
-  opacity: 0.7;
+  color: white;
+  background-color: black;
 }

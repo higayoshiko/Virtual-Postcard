@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
+import EmailForm from "../emailForm/emailForm";
 import Header from "../header/header";
+import SavedForm from "../savedForm/savedForm";
 
 const SavedPostCard = ({ authService }) => {
   const navigate = useNavigate();
@@ -18,10 +20,12 @@ const SavedPostCard = ({ authService }) => {
   });
 
   return (
-    <section>
+    <>
       <Header authService={authService} onLogOut={onLogOut} />
       <h1>saved postcard</h1>
-    </section>
+      <EmailForm />
+      <SavedForm />
+    </>
   );
 };
 
