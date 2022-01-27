@@ -1,21 +1,29 @@
 .header {
   width: 100%;
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid;
 }
 
 .logo {
+  font-size: 2em;
+  margin-left: 6em;
+  padding: 0.2em;
   display: inline-block;
-  margin-left: 8em;
+}
+.title {
+  display: inline-block;
+  width: 10em;
 }
 
-.login {
+.login,
+.logoutBtn {
   float: right;
+  margin-top: 3em;
+  margin-right: 7em;
 }
 
 .logoutBtn {
-  float: right;
-  font-size: 1.2em;
-  margin-top: 1.4em;
+  margin-right: 14em;
+  font-size: 1em;
   padding: 0.3em 0.6em;
   background: none;
   border: 1px solid;

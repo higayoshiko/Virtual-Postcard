@@ -1,13 +1,24 @@
-.login {
-  align-items: center;
-  text-align: center;
-  margin-top: 2em;
-}
 .ul {
   margin: 0;
-  padding: 0;
 }
+.title,
 .li {
-  float: left;
+  font-weight: bold;
+  font-size: 1.1em;
   list-style: none;
+  float: left;
+  margin: 0 0.1em;
+}
+.title {
+  margin-right: 0.5em;
+}
+.btn {
+  background: none;
+  border: 1px solid;
+  border-radius: 45%;
+  padding: 0.3em 0.6em;
+  font-weight: bold;
+}
+.btn:hover {
+  opacity: 0.7;
 }

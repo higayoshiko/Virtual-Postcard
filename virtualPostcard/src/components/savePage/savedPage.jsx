@@ -18,10 +18,10 @@ const SavedPostCard = ({ authService }) => {
   });
 
   return (
-    <>
+    <section>
       <Header authService={authService} onLogOut={onLogOut} />
       <h1>saved postcard</h1>
-    </>
+    </section>
   );
 };
 
