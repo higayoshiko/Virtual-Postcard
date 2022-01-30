@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  border: 2px solid;
+}
+
+.logo {
+  font-size: 2em;
+  margin-left: 6em;
+  padding: 0.2em;
+  display: inline-block;
+}
+.title {
+  display: inline-block;
+  width: 10em;
+}
+
+.login,
+.logoutBtn {
+  float: right;
+  margin-top: 3em;
+  margin-right: 7em;
+}
+
+.logoutBtn {
+  margin-right: 14em;
+  font-size: 1em;
+  padding: 0.3em 0.6em;
+  background: none;
+  border: 1px solid;
+  border-radius: 45%;
+  font-weight: bold;
+}
+.logoutBtn:hover {
+  opacity: 0.7;
+}
