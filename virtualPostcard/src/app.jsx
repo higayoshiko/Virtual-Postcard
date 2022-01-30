@@ -2,6 +2,8 @@ import "./app.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MakePostCard from "./components/makePostCard/makePostCard";
 import SavedPostCard from "./components/savePage/savedPage";
+import React from "react";
+import Grid from "./components/grid/Grid";
 
 function App({ authService }) {
   return (
