@@ -1,17 +1,9 @@
 import React from "react";
-import Grid from "./Components/Grid";
-import "./app.css";
+import Grid from "./components/grid/Grid";
 
 function App() {
-  return ( <
-    div className = "container" >
-    <
-    div className = "image_grid" >
-    <
-    Grid / >
-    <
-    /div> <
-    /div>
+  return (
+    < Grid / >
   );
 }
 
