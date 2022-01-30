@@ -1,7 +1,10 @@
-import "./app.css";
+import React from "react";
+import Grid from "./components/grid/Grid";
 
 function App() {
-  return <h1>hello</h1>;
+  return (
+    < Grid / >
+  );
 }
 
 export default App;
