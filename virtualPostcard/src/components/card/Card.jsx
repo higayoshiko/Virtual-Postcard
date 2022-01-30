@@ -4,13 +4,8 @@ import PropTypes from 'prop-types';
 function Card(props) {
 
   return <div >
-    <
-    img src = {
-      props.imageTarget
-    }
-  alt = "yep" / >
-    <
-    /div>
+    < img src = { props.imageTarget } alt = "yep" / >
+    < /div>
 }
 
 Card.propTypes = {

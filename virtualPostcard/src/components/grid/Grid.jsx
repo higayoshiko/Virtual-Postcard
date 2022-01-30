@@ -1,6 +1,4 @@
-import React, {
-  useState
-} from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
 import Card from "../card/Card";
 import styles from './Grid.module.css'
@@ -12,7 +10,6 @@ function Grid() {
   const [image, setImage] = useState('');
 
   function handleChange(e) {
-    console.log(e.target.value)
     setInput(e.target.value);
   }
 
@@ -33,81 +30,36 @@ function Grid() {
 
   function sendImage(e) {
     setImage(e.target.src);
-    // console.log(e.target)
   }
 
-  return <div className = {
-      styles.container
-    } >
-    <
-    div className = {
-      styles.grid_2_columns
-    } >
-    <
-    Card imageTarget = {
-      image
-    }
-  /> <
-  form className = {
-    styles.form
-  }
-  onSubmit = {
-      handleChange
-    } >
-    <
-    div className = {
-      styles.searchBar
-    } >
-    <
-    input className = {
-      styles.input
-    }
-  type = "text"
-  onChange = {
-    handleChange
-  }
-  placeholder = "Search..."
-  value = {
-    inputText
-  }
-  /> <
-  button className = {
-    styles.button
-  }
-  type = "submit"
-  onClick = {
-      sendInput
-    } > Search < /button> <
-    /div> <
-    div className = {
-      styles.grid_3_columns
-    } > {
-      post.map(url => {
-        return <div key = {
-            url.id
-          } >
-          <
-          div >
-          <
-          img src = {
-            url
-          }
-        alt = "images"
-        onClick = {
-          sendImage
-        }
-        className = {
-          styles.img
-        }
-        /> <
-        /div> <
-        /div>
-      })
-    } <
-    /div> <
-    /form> <
-    /div> <
-    /div>
+  return <div className = {styles.container} >
+    < div className = { styles.grid_2_column } >
+    < Card imageTarget = { image } />
+    < form className = { styles.form } onSubmit = { handleChange } >
+    < div className = { styles.searchBar } >
+    < input className = { styles.input }
+    type = "text"
+    onChange = { handleChange }
+    placeholder = "Search..."
+    value = { inputText } />
+    < button className = { styles.button }
+    type = "submit"
+    onClick = { sendInput } > Search
+    < /button >
+    < /div>
+    < div className = { styles.grid_3_columns } >
+    { post.map(url => { return <div key = { url.id } >
+    < div >
+    < img src = { url }
+    alt = "images"
+    onClick = { sendImage }
+    className = { styles.img } />
+    < /div >
+    </div > })}
+    < /div >
+    < /form >
+    < /div >
+    < /div >
 }
 
 export default Grid;
