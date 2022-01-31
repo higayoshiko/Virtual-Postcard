@@ -1,29 +1,11 @@
-
-.container {
-  margin: 100px 0 0 100px;
+.mail_ctn {
+  margin-top: 200px;
 }
 
-.grid_2_columns {
-  display: grid;
-  grid-template-columns: 35% 65%;
-  grid-column-gap: 200px;
-
-  align-items: center;
-}
-
-.form {
-  width: 820px;
-  height: 750px;
-  background-color: #E1E5EA;
-  padding: 100px 20px 25px;
-
-  position: relative;
-}
-
-.searchBar {
-  position: absolute;
-  right: 15px;
-  top: 20px;
+.label {
+  font-size: 24px;
+  padding-bottom: 10px;
+  display: block;
 }
 
 .input {
@@ -63,20 +45,4 @@
 .button:active {
   transform: translateY(1px);
   box-shadow: 0 5px 10px rgba(0 ,0, 0,.2);
-}
-
-.grid_3_columns{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  text-align: center;
-}
-
-.img {
-  height: 120px;
-}
-
-.img:hover {
-  transform: scale(1.1);
-  cursor: pointer;
 }

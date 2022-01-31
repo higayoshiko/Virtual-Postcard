@@ -22,30 +22,36 @@ app.post("/sendInput", cors(), async(inputReq, inputRes) => {
 
     //searched item //////will update this
     let component = await inputText;
-    console.log(component)
     //will update this
     let page = '1';
     const url = `https://pixabay.com/api/?key=${keys}&q=${component}&image_type=photo&orientation=horizontal&page=${page}&per_page=15`;
 
     https.get(url, function(response) {
         let result = "";
+
+        // let ob = {};
       //run when getting the data
       response.on("data", function(data) {
         //add result one by one to empty variable
         result += data;
       });
 
+
       //run at end of response
     response.on("end", function() {
         //parse result to JSON
         let parsed = JSON.parse(result);
         let hits = parsed["hits"];
-        //store all the webformatURL of each
-        let imagesArray = hits.map(item => item["webformatURL"]);
 
-        // let imagesId = hits.map(item => item["id"]);
-        console.log(imagesArray);
-        res.send({imagesArray});
+        let array = [];
+
+        for (var key in hits) {
+          let hitsID = hits[key]["id"].toString();
+          let hitsURL = hits[key]["webformatURL"];
+            array.push({id : hitsID, url : hitsURL});
+        }
+
+        res.send({array});
         inputText = '';
         result = '';
       });
