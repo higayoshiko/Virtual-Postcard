@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 2em;
+  padding: 1em 2em;
+  width: 40%;
+  border: solid;
+}
+.input,
+.msg {
+  border: none;
+  border-bottom: 1px solid;
+  padding: 0.5em;
+  font-size: 0.9em;
+  margin: 0.1em;
+}
+
+.msg {
+  height: 10em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.btns {
+  flex-direction: row;
+  /* border: solid; */
+}
+
+.imgBtn,
+.sendBtn {
+  float: right;
+  font-size: 1em;
+  margin: 0.5em 0.1em;
+  width: 4em;
+  padding: 0.2em;
+  background: none;
+  border: 1px solid gray;
+  border-radius: 45%;
+}
+.imgBtn:hover,
+.sendBtn:hover {
+  color: white;
+  background-color: black;
+}

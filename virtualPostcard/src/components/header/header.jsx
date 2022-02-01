@@ -11,7 +11,7 @@ const Header = ({ onLogOut, authService }) => {
       <div className={styles.title}>
         <h1>virtual postcard</h1>
       </div>
-
+      {/* user가 있을때만 보이게로 바꾸기 */}
       {!onLogOut && (
         <div className={styles.login}>
           <Login authService={authService} />
