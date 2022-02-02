@@ -1,23 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./emailForm.module.css";
 
 const EmailForm = (props) => {
+  const formRef = useRef();
+  const nameRef = useRef();
+  const titleRef = useRef();
+  const emailRef = useRef();
+  const messageRef = useRef();
+
   return (
-    <form className={styles.form}>
+    <form ref={formRef} className={styles.form}>
       {/* <h3>email form</h3> */}
       <input
+        ref={nameRef}
         className={styles.input}
         type="text"
         name="name"
         placeholder="Name"
       ></input>
       <input
+        ref={titleRef}
         className={styles.input}
         type="text"
         name="title"
         placeholder="Title"
       ></input>
       <input
+        ref={emailRef}
         className={styles.input}
         type="text"
         name="email"
@@ -32,6 +41,7 @@ const EmailForm = (props) => {
         allowFullScreen
       /> */}
       <textarea
+        ref={messageRef}
         className={styles.msg}
         name="message"
         placeholder="Message"

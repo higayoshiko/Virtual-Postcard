@@ -4,7 +4,7 @@
   margin: 1em 2em;
   padding: 1em 2em;
   width: 40%;
-  border: solid;
+  /* border: solid; */
 }
 .input,
 .msg {
@@ -27,7 +27,7 @@
 .imgBtn,
 .sendBtn {
   float: right;
-  font-size: 1em;
+  font-size: 0.9em;
   margin: 0.5em 0.1em;
   width: 4em;
   padding: 0.2em;
