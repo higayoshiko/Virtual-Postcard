@@ -32,7 +32,7 @@ function SendMail(props) {
 return (
         < form className={styles.mail_ctn}
         onSubmit = { (e) => setEmail(e.target.value) } >
-        < label className={styles.label} >Send to your friends:</ label >
+        < label className={styles.label} >Send this to your friends:</ label >
         < input className={styles.input} type="text"
         onChange = { (e) => setEmail(e.target.value) }
         placeholder="Enter your friend's email" value={ email} required />
