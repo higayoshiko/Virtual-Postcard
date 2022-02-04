@@ -1,0 +1,14 @@
+.img {
+width: 28em;
+max-height: 28em;
+}
+
+.displayCtn {
+  height: 50em;
+  align-self: flex-start;
+}
+
+.cardCtn {
+  text-align: center;
+  height: 28em;
+}

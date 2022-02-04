@@ -12,11 +12,12 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors({origin: true}));
 
-
 app.post("/sendNodemailer", cors(), async function(req, res) {
-  let {email} = await req.body;
+  let {currentEmail} = await req.body;
+  let {currentImage} = await req.body;
+  let {currentName} = await req.body;
+  let {currentMessage} = await req.body;
 
-  console.log(email)
 
   //OAuth2 allows you to make API calls on behalf of the user
   const oAuth2Client = new google.auth.OAuth2(process.env.OAUTH_CLIENTID, process.env.OAUTH_CLIENT_SECRET, process.env.OAUTH_REDIRECT_URI);
@@ -47,9 +48,10 @@ app.post("/sendNodemailer", cors(), async function(req, res) {
       //objects to be sent
       const options = {
         from: 'virtualPostcard <virtualpostcard12@gmail.com>',
-        to: email,
-        text: "Yello",
-        html: '<h1>Hello world</h1>'
+        to: currentEmail,
+        subject: "Hello " + currentName +", your friend sent you a greeting!",
+        html: '<p style="font-size:1.5em">' + currentMessage + '</p><br/><img src="'
+        + currentImage +'" style="height:20em; width:30em;">'
       };
 
       //use transport data to send objects

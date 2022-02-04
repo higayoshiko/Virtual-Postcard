@@ -1,39 +1,41 @@
-
 .container {
-  margin: 100px 0 0 100px;
+  margin: 6.25em 0 0 6.25em;
 }
 
+/* separate searchbar/grid(right-side) from display image(left-side) */
 .grid_2_columns {
   display: grid;
-  grid-template-columns: 35% 65%;
-  grid-column-gap: 200px;
+  grid-template-columns: 45% 55%;
+  grid-column-gap: 3.125em;
 
   align-items: center;
 }
 
+/* form box */
 .form {
-  width: 820px;
-  height: 750px;
+  width: 46.875em;
+  height: 50em;
   background-color: #E1E5EA;
-  padding: 100px 20px 25px;
+  padding: 1.56em 1.25em 1.7em;
 
   position: relative;
 }
 
 .searchBar {
-  position: absolute;
-  right: 15px;
-  top: 20px;
+  position: relative;
+  display: inline;
+  right: -1.25em;
+  top: .312em;
 }
 
 .input {
-  height: 40px;
-  font-size: 18px;
-  margin-right: 10px;
-  padding: 3px;
-  border: .5px solid #9D9D9D;
-  border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+  height: 2.5em;
+  font-size: 1.13em;
+  margin-right: .625em;
+  padding: .188em;
+  border: .0313em solid #9D9D9D;
+  border-radius: .25em;
+  box-shadow: 0 .625em 1.88em rgba(0, 0, 0, .1);
 }
 
 .input:active,
@@ -44,39 +46,50 @@
 .button,
 .button:link,
 .button:visited {
-  height: 46px;
-  width: 100px;
+  height: 2.88em;
+  width: 6.25em;
   vertical-align: top;
-  font-size: 18px;
-  border: .5px solid #9D9D9D;
-  border-radius: 4px;
+  font-size: 1.13em;
+  border: .031em solid #9D9D9D;
+  border-radius: .25em;
   transition: all .2s;
+  margin-right: .625em;
 }
 
 .button:hover {
   color: #212121;
-  transform: translateY(-2px);
+  transform: translateY(-.125em);
   cursor: pointer;
-  box-shadow: 0 5px 20px rgba(0 ,0 ,0 ,.2);
+  box-shadow: 0 .312em 1.25em rgba(0 ,0 ,0 ,.2);
 }
 
 .button:active {
-  transform: translateY(1px);
-  box-shadow: 0 5px 10px rgba(0 ,0, 0,.2);
+  transform: translateY(.063em);
+  box-shadow: 0 .312em .625em rgba(0 ,0, 0,.2);
 }
 
-.grid_3_columns{
+/* searched images from api*/
+.grid_4_columns{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: .625em;
   text-align: center;
+  padding-top: 3.13em;
 }
 
 .img {
-  height: 120px;
+  height: 9.38em;
+  width: 9.38em;
+  overflow: hidden;
 }
 
 .img:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+
+.pageBtn {
+  position: absolute;
+  bottom: .625em;
+  left: 17.5em;
 }
