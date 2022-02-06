@@ -1,0 +1,50 @@
+.form {
+  margin: 1em;
+  padding: 0.5em;
+}
+.searchBar {
+  padding: 1em;
+}
+.input {
+  width: 85%;
+  outline: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid;
+  padding: 0.3em;
+  font-size: 1em;
+}
+.searchBtn {
+  font-size: 1em;
+  padding: 0.3em 0.6em;
+  background: none;
+  border: 1px solid;
+  border-radius: 45%;
+  font-weight: bold;
+}
+.grid {
+  padding: 1em;
+  margin-left: 2em;
+  width: 90%;
+  height: 11em;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+}
+.img {
+  padding: 0.25em 0.5em;
+  width: 10em;
+  height: 10em;
+}
+
+.button {
+  font-size: 1em;
+  width: 5.5em;
+  padding: 0.3em 0.6em;
+  margin: 0 1em;
+  background: none;
+  border: 1px solid;
+  border-radius: 45%;
+  font-weight: bold;
+}

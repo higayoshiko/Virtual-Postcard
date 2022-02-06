@@ -1,22 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Mail from "../mail/Mail";
+import React from "react";
+import PropTypes from "prop-types";
+
 import styles from "./DisplayImage.module.css";
 
-
+const DEFAULT_IMAGE = "/images/post.jpeg";
 function DisplayImage(props) {
-
+  const url = props.imageTarget || DEFAULT_IMAGE;
   return (
-  < div className={ styles.displayCtn } >
-  < div className={ styles.cardCtn } >
-  < img src = { props.imageTarget } className={ styles.img } alt = "" />
-  </ div >
-  < Mail sendtoMail={ props.imageTarget } />
-  </ div >
-)}
+    <div className={styles.displayCtn}>
+      <div className={styles.cardCtn}>
+        <img src={url} className={styles.img} alt="" />
+      </div>
+    </div>
+  );
+}
 
 DisplayImage.propTypes = {
-  imageTarget: PropTypes.string
-}
+  imageTarget: PropTypes.string,
+};
 
 export default DisplayImage;

@@ -1,14 +1,16 @@
-.img {
-width: 28em;
-max-height: 28em;
-}
-
 .displayCtn {
-  height: 50em;
+  height: 95%;
+  width: 95%;
   align-self: flex-start;
+}
+.img {
+  border-radius: 5%;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
 }
 
 .cardCtn {
+  height: 100%;
   text-align: center;
-  height: 28em;
 }
