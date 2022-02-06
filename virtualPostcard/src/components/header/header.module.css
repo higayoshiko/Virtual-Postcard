@@ -1,6 +1,6 @@
 .header {
-  width: 100%;
-  border: 2px solid;
+  /* width: 100%;
+  border: 2px solid; */
 }
 
 .logo {
@@ -12,17 +12,23 @@
 .title {
   display: inline-block;
   width: 10em;
+  font-size: 1.1em;
 }
 
 .login,
-.logoutBtn {
+.logout {
   float: right;
   margin-top: 3em;
   margin-right: 7em;
 }
-
+.logout {
+  float: right;
+  padding: 0 3em;
+}
+.a {
+  color: black;
+}
 .logoutBtn {
-  margin-right: 14em;
   font-size: 1em;
   padding: 0.3em 0.6em;
   background: none;
@@ -31,5 +37,6 @@
   font-weight: bold;
 }
 .logoutBtn:hover {
-  opacity: 0.7;
+  color: white;
+  background-color: black;
 }
