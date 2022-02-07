@@ -17,15 +17,18 @@ const Grid = (props) => {
   return (
     <section className={styles.container}>
       <div className={styles.top}>
+        {/* image */}
         <div onClick={onClickOpen} className={styles.displayImg}>
           <DisplayImage imageTarget={image} />
         </div>
 
+        {/* email */}
         <div className={styles.email}>
           <Mail sendtoMail={image} />
         </div>
       </div>
 
+      {/* search */}
       {open ? (
         <div className={styles.bottom}>
           <div className={styles.img}>

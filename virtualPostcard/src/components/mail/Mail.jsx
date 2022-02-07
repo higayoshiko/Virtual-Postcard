@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import PropTypes from "prop-types";
 import styles from "./Mail.module.css";
+import ImgFile from "../imgFile/imgFile";
 
 const SendMail = (props) => {
   const [email, setEmail] = useState("");
@@ -63,6 +64,7 @@ const SendMail = (props) => {
         >
           Send
         </button>
+        <ImgFile />
       </div>
     </form>
   );
