@@ -78,6 +78,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve("../build", 'index.html'));
 });
 
-app.listen(8001, function () {
+app.listen(process.env.PORT || 8001, function () {
   console.log("server started");
 });
