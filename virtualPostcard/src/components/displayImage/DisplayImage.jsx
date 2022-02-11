@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import styles from "./DisplayImage.module.css";
 
 const DEFAULT_IMAGE = "/images/post.jpeg";
-function DisplayImage(props) {
-  const url = props.imageTarget || DEFAULT_IMAGE;
+
+const DisplayImage = ({ imageTarget }) => {
+  const url = imageTarget || DEFAULT_IMAGE;
+
   return (
     <div className={styles.displayCtn}>
       <div className={styles.cardCtn}>
@@ -13,7 +14,7 @@ function DisplayImage(props) {
       </div>
     </div>
   );
-}
+};
 
 DisplayImage.propTypes = {
   imageTarget: PropTypes.string,

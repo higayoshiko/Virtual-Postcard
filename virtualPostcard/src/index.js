@@ -2,18 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./app";
-import reportWebVitals from "./reportWebVitals";
-// import ImgFile from "./components/imgFile/imgFile";
-// import ImgUploader from "./service/img_uploader";
+import ImgUploader from "./service/image_uploader";
+import ImgFile from "./components/imgFile/imgFile";
 
-// const imgUploader = new ImgUploader();
-// const FileInput = (props) => <ImgFile {...props} imgUploader={imgUploader} />;
+const imageUploader = new ImgUploader();
+const FileInput = (props) => (
+  <ImgFile {...props} imageUploader={imageUploader} />
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App FileInput={FileInput} />
   </React.StrictMode>,
   document.getElementById("root")
 );
-
-reportWebVitals();

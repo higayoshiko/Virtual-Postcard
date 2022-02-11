@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import styles from "./Grid.module.css";
-import DisplayImage from "../displayImage/DisplayImage";
 import Mail from "../Mail/Mail";
 import ImgApi from "../imgApi/imgApi";
+import PropTypes from "prop-types";
 
-const Grid = (props) => {
+const Grid = ({ FileInput }) => {
   const [image, setImage] = useState("");
   const [open, setOpen] = useState(false);
+
   const onClickImg = (event) => {
     setImage(event.target.src);
   };
+  const onImgReset = () => {
+    setImage("");
+  };
+
   const onClickOpen = (event) => {
     setOpen((prevStatus) => (prevStatus ? false : true));
   };
@@ -17,27 +22,30 @@ const Grid = (props) => {
   return (
     <section className={styles.container}>
       <div className={styles.top}>
-        {/* image */}
-        <div onClick={onClickOpen} className={styles.displayImg}>
-          <DisplayImage imageTarget={image} />
-        </div>
-
         {/* email */}
         <div className={styles.email}>
-          <Mail sendtoMail={image} />
+          <Mail
+            FileInput={FileInput}
+            onClickOpen={onClickOpen}
+            sendtoMail={image}
+          />
         </div>
       </div>
 
       {/* search */}
+
       {open ? (
         <div className={styles.bottom}>
           <div className={styles.img}>
-            <ImgApi onClickImg={onClickImg} />
+            <ImgApi onClickImg={onClickImg} onImgReset={onImgReset} />
           </div>
         </div>
       ) : null}
     </section>
   );
+};
+Grid.propTypes = {
+  FileInput: PropTypes.func,
 };
 
 export default Grid;

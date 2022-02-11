@@ -2,24 +2,24 @@ import React, { useState } from "react";
 import Axios from "axios";
 import PropTypes from "prop-types";
 import styles from "./Mail.module.css";
-import ImgFile from "../imgFile/imgFile";
+import DisplayImage from "../displayImage/DisplayImage";
 
-const SendMail = (props) => {
+const SendMail = ({ sendtoMail, FileInput, onClickOpen }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+  const [file, setFile] = useState({ fileURL: null });
 
   const data = {
     currentEmail: email,
     currentName: name,
     currentMessage: message,
-    currentImage: props.sendtoMail,
+    currentImage: file.fileURL || sendtoMail,
   };
 
   // call backend mailer.js
   function sendNodemailer(e) {
     e.preventDefault();
-
     try {
       Axios.post("http://localhost:8001/sendNodemailer", data);
     } catch (error) {
@@ -27,44 +27,62 @@ const SendMail = (props) => {
     }
     alert("Your postcard has been sent!");
   }
+  const onReset = () => {
+    setFile({
+      fileURL: "",
+    });
+  };
+  const onFileChange = (file) => {
+    console.log(file);
+    setFile({
+      fileURL: file.url,
+    });
+  };
 
   return (
     <form className={styles.form} onSubmit={(e) => setEmail(e.target.value)}>
-      <input
-        className={styles.input}
-        type="text"
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        value={email}
-        required
-      />
-      <input
-        className={styles.input}
-        type="text"
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Name"
-        value={name}
-        required
-      />
-      <textarea
-        className={styles.msg}
-        type="text"
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder="Message"
-        value={message}
-        rows="5"
-        cols="30"
-        required
-      />
-      <div className={styles.btns}>
-        <button
-          className={styles.sendBtn}
-          type="submit"
-          onClick={sendNodemailer}
-        >
-          Send
-        </button>
-        <ImgFile />
+      <div className={styles.resetimg} onClick={onReset}>
+        <div className={styles.displayImg} onClick={onClickOpen}>
+          <DisplayImage imageTarget={data.currentImage} />
+        </div>
+      </div>
+      <div className={styles.email}>
+        <input
+          className={styles.input}
+          type="text"
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          value={email}
+          required
+        />
+        <input
+          className={styles.input}
+          type="text"
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Name"
+          value={name}
+          required
+        />
+        <textarea
+          className={styles.msg}
+          type="text"
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Message"
+          value={message}
+          rows="5"
+          cols="30"
+          required
+        />
+        <div className={styles.btns}>
+          <button
+            className={styles.sendBtn}
+            type="submit"
+            onClick={sendNodemailer}
+          >
+            Send
+          </button>
+          <FileInput onFileChange={onFileChange} />
+        </div>
       </div>
     </form>
   );
@@ -72,6 +90,9 @@ const SendMail = (props) => {
 
 SendMail.propTypes = {
   sendtoMail: PropTypes.string,
+  onClickOpen: PropTypes.func,
+  FileInput: PropTypes.func,
+  imageTarget: PropTypes.string,
 };
 
 export default SendMail;

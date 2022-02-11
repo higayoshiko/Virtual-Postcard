@@ -2,6 +2,13 @@
   margin: 1em;
   padding: 0.5em;
 }
+.x {
+  background: none;
+  margin-right: 1em;
+  border-radius: 50%;
+  border: grey 1px solid;
+}
+
 .searchBar {
   padding: 1em;
 }
@@ -47,4 +54,10 @@
   border: 1px solid;
   border-radius: 45%;
   font-weight: bold;
+}
+.button:hover,
+.searchBtn:hover,
+.x:hover {
+  color: white;
+  background-color: black;
 }

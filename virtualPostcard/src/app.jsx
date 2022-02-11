@@ -3,18 +3,18 @@ import Grid from "./components/grid/Grid";
 import Header from "./components/header/header";
 
 // import styles from "./app.module.css";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
-function App() {
+function App({ FileInput }) {
   return (
     <div>
       <Header />
-      <Grid />
+      <Grid FileInput={FileInput} />
     </div>
   );
 }
-// App.propTypes = {
-//   authService: PropTypes.object,
-// };
+App.propTypes = {
+  FileInput: PropTypes.func,
+};
 
 export default App;

@@ -3,7 +3,7 @@ import styles from "./imgApi.module.css";
 import Axios from "axios";
 import PropTypes from "prop-types";
 
-const ImgApi = ({ onClickImg }) => {
+const ImgApi = ({ onClickImg, onImgReset }) => {
   const [query, setQuery] = useState("");
   const [array, setArray] = useState([]);
   const [page, setPage] = useState(1);
@@ -29,6 +29,9 @@ const ImgApi = ({ onClickImg }) => {
   return (
     <form className={styles.form} onSubmit={getData}>
       <div className={styles.searchBar}>
+        <button className={styles.x} onClick={onImgReset}>
+          x
+        </button>
         <input
           className={styles.input}
           type="text"
@@ -88,5 +91,6 @@ const ImgApi = ({ onClickImg }) => {
 
 ImgApi.propTypes = {
   onClickImg: PropTypes.func,
+  onImgReset: PropTypes.func,
 };
 export default ImgApi;
