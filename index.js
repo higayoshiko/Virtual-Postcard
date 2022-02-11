@@ -8,7 +8,7 @@ import * as path from 'path';
 
 const app = express();
 
-dotenv.config({ path: '../.env' });
+dotenv.config();
 app.use(express.json());
 app.use(express.static('client/build'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -63,7 +63,7 @@ app.post("/sendNodemailer", cors(), async function (req, res) {
 
 
   //run sendMail function then log sent if successful, log error if not
-  sendMail().then(result => { 
+  sendMail().then(result => {
     res.json({ message: "Message sent", result });
     console.log('sent', result);
   })
