@@ -21,7 +21,7 @@ const SendMail = ({ sendtoMail, FileInput, onClickOpen }) => {
   function sendNodemailer(e) {
     e.preventDefault();
     try {
-      Axios.post("http://localhost:8001/sendNodemailer", data);
+      Axios.post("/sendNodemailer", data);
     } catch (error) {
       console.log(error.response.data);
     }
