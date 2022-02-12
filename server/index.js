@@ -7,12 +7,9 @@ import bodyParser from 'body-parser';
 import * as path from 'path';
 
 const app = express();
-
-dotenv.config({
-  path: "./client/.env"
-});
+dotenv.config();
 app.use(express.json());
-app.use(express.static('client/build'));
+app.use(express.static('../build'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({ origin: true }));
 
@@ -73,6 +70,7 @@ app.post("/sendNodemailer", cors(), async function (req, res) {
 
 
 app.get('*', (req, res) => {
+  console.log(path.resolve("../build", 'index.html'))
   res.sendFile(path.resolve("../build", 'index.html'));
 });
 
