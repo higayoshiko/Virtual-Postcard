@@ -7,9 +7,13 @@ import bodyParser from 'body-parser';
 import * as path from 'path';
 
 const app = express();
-dotenv.config();
+
+if (process.env.NODE_ENV === 'developnment') {
+  dotenv.config();
+}
+
 app.use(express.json());
-app.use(express.static('../build'));
+app.use(express.static('./client/build'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({ origin: true }));
 
@@ -68,10 +72,15 @@ app.post("/sendNodemailer", cors(), async function (req, res) {
     .catch(error => console.log("sent error", error));
 });
 
+app.get("/env", (req, res) => {
+  console.log(process.env.OAUTH_CLIENTID)
+  res.json(process.env);
+});
+
 
 app.get('*', (req, res) => {
-  console.log(path.resolve("../build", 'index.html'))
-  res.sendFile(path.resolve("../build", 'index.html'));
+  console.log(path.resolve("./client/build", 'index.html'))
+  res.sendFile(path.resolve("./client/build", 'index.html'));
 });
 
 app.listen(process.env.PORT || 8001, function () {
