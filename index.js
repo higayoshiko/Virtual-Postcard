@@ -8,7 +8,9 @@ import * as path from 'path';
 
 const app = express();
 
-dotenv.config();
+dotenv.config({
+  path: "./client/.env"
+});
 app.use(express.json());
 app.use(express.static('client/build'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -53,8 +55,7 @@ app.post("/sendNodemailer", cors(), async function (req, res) {
       };
 
       //use transport data to send objects
-      const result = await transport.sendMail(options);
-      return result;
+      return await transport.sendMail(options);
 
     } catch (error) {
       return error;
@@ -70,9 +71,6 @@ app.post("/sendNodemailer", cors(), async function (req, res) {
     .catch(error => console.log("sent error", error));
 });
 
-app.get("/test", (req, res) => {
-  res.json({ message: "Hello from server!" });
-});
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve("../build", 'index.html'));

@@ -10,44 +10,38 @@
 }
 .resetimg {
   width: 58%;
+  display: flex;
+  flex-direction: column;
 }
 .email {
   display: flex;
   flex-direction: column;
   width: 42%;
-  height: 60%;
-  margin-top: 2rem;
-  padding: 0.5em;
+  margin: auto;
+  padding: 0.5rem;
 }
 .input,
 .msg {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid;
-  padding: 0.5em;
-  font-size: 0.9em;
-  margin: 0.1em;
+  composes: input from global;
 }
 .msg {
-  height: 10em;
+  height: 8em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow-y: auto;
 }
 .btns {
-  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .sendBtn {
-  float: right;
-  font-size: 0.9em;
-  margin: 0.5em 0.1em;
-  width: 4em;
-  padding: 0.2em;
-  background: none;
-  border: 1px solid gray;
-  border-radius: 45%;
+  composes: btn from global;
+  width: 6rem;
+  align-self: end;
+  margin-top: 1rem;
 }
 
-.sendBtn:hover {
-  color: white;
-  background-color: black;
+.searchBtn {
+  margin-left: 1rem;
+  composes: btnPrimaryOutline from global;
 }

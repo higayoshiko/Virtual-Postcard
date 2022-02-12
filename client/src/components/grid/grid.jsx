@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Grid.module.css";
+import styles from "./grid.module.css";
 import Mail from "../mail/Mail";
 import ImgApi from "../imgApi/imgApi";
 import PropTypes from "prop-types";
@@ -21,21 +21,18 @@ const Grid = ({ FileInput }) => {
 
   return (
     <section className={styles.container}>
-      <div className={styles.top}>
-        {/* email */}
-        <div className={styles.email}>
-          <Mail
-            FileInput={FileInput}
-            onClickOpen={onClickOpen}
-            sendtoMail={image}
-          />
-        </div>
+      {/* email */}
+      <div className={styles.inputWrapper}>
+        <Mail
+          FileInput={FileInput}
+          onClickOpen={onClickOpen}
+          sendtoMail={image}
+        />
       </div>
 
       {/* search */}
-
       {open ? (
-        <div className={styles.bottom}>
+        <div className={styles.searchWrapper}>
           <div className={styles.img}>
             <ImgApi onClickImg={onClickImg} onImgReset={onImgReset} />
           </div>

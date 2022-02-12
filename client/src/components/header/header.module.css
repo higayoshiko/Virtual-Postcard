@@ -1,18 +1,33 @@
-.header {
-  /* width: 100%;
-  border: 2px solid; */
+.headerContainer {
+  align-items: center;
+  display: flex;
+  margin: 2em 0;
 }
 
 .logo {
+  color: #0f093f;
   font-size: 2em;
-  margin-left: 6em;
-  padding: 0.2em;
-  display: inline-block;
+  padding-right: 1em;
 }
 .title {
-  display: inline-block;
+  color: #6857dd;
   width: 10em;
   font-size: 1.1em;
+}
+
+.title > h1 {
+  margin: 0;
+}
+.info {
+  background: none;
+  border: 1px solid;
+  border-radius: 50%;
+  font-weight: bold;
+  align-self: end;
+}
+.info:hover {
+  color: white;
+  background-color: black;
 }
 
 .login,
@@ -28,15 +43,11 @@
 .a {
   color: black;
 }
-x .logoutBtn {
+.logoutBtn {
   font-size: 1em;
   padding: 0.3em 0.6em;
   background: none;
   border: 1px solid;
   border-radius: 45%;
   font-weight: bold;
-}
-.logoutBtn:hover {
-  color: white;
-  background-color: black;
 }

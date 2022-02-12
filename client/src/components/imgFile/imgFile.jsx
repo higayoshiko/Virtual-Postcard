@@ -28,7 +28,7 @@ const ImgFile = ({ imageUploader, onFileChange }) => {
       ></input>
 
       <button className={styles.btn} onClick={onBtnClick}>
-        image
+        Upload Image
       </button>
     </div>
   );

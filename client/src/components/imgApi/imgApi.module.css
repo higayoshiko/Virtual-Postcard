@@ -1,63 +1,83 @@
 .form {
-  margin: 1em;
-  padding: 0.5em;
-}
-.x {
-  background: none;
-  margin-right: 1em;
-  border-radius: 50%;
-  border: grey 1px solid;
+  display: flex;
+  flex-direction: column;
 }
 
 .searchBar {
-  padding: 1em;
+  display: table;
 }
+
+.inputWrapper,
+.clearWrapper {
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.clearWrapper {
+  padding-right: 0.5rem;
+}
+
 .input {
-  width: 85%;
-  outline: none;
-  background: none;
-  border: none;
-  border-bottom: 1px solid;
-  padding: 0.3em;
-  font-size: 1em;
+  composes: input from global;
+  width: 100%;
+  margin: 0 !important;
 }
+
+.clear {
+  color: #ccc;
+  padding: 0;
+  cursor: pointer;
+  font-size: inherit;
+  cursor: pointer;
+  line-height: 1.5;
+  -webkit-transition: all 3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.clear > svg:hover {
+  color: rgba(104, 87, 221, 0.8);
+}
+
 .searchBtn {
-  font-size: 1em;
-  padding: 0.3em 0.6em;
-  background: none;
-  border: 1px solid;
-  border-radius: 45%;
-  font-weight: bold;
+  composes: btnSecondary from global;
 }
+
 .grid {
-  padding: 1em;
-  margin-left: 2em;
-  width: 90%;
-  height: 11em;
-  overflow-x: auto;
-  overflow-y: hidden;
+  margin: 1em 0;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
 }
+
+.gridResult {
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+}
+
 .img {
   padding: 0.25em 0.5em;
-  width: 10em;
   height: 10em;
 }
 
-.button {
-  font-size: 1em;
-  width: 5.5em;
-  padding: 0.3em 0.6em;
-  margin: 0 1em;
-  background: none;
-  border: 1px solid;
-  border-radius: 45%;
-  font-weight: bold;
+.navigateBtn {
+  composes: btnSecondary from global;
 }
-.button:hover,
-.searchBtn:hover,
-.x:hover {
-  color: white;
-  background-color: black;
+
+.navigateBtn svg {
+  padding: 0.5rem;
+}
+
+.navigateBtn:hover {
+  color: #000000;
+  background-color: rgba(184, 181, 255, 0.6);
+}
+
+.pageBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }

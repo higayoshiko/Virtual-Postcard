@@ -17,7 +17,7 @@ const SendMail = ({ sendtoMail, FileInput, onClickOpen }) => {
     currentImage: file.fileURL || sendtoMail,
   };
 
-  // call backend mailer.js
+  // call backend api
   function sendNodemailer(e) {
     e.preventDefault();
     try {
@@ -74,15 +74,22 @@ const SendMail = ({ sendtoMail, FileInput, onClickOpen }) => {
           required
         />
         <div className={styles.btns}>
-          <button
-            className={styles.sendBtn}
-            type="submit"
-            onClick={sendNodemailer}
-          >
-            Send
-          </button>
           <FileInput onFileChange={onFileChange} />
+          <button
+            className={styles.searchBtn}
+            type="button"
+            onClick={onClickOpen}
+          >
+            Search Online
+          </button>
         </div>
+        <button
+          className={styles.sendBtn}
+          type="submit"
+          onClick={sendNodemailer}
+        >
+          Send
+        </button>
       </div>
     </form>
   );

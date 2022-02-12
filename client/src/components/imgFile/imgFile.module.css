@@ -1,17 +1,7 @@
 .btn {
-  float: right;
-  font-size: 0.9em;
-  margin: 0.5em 0.1em;
-  width: 4em;
-  padding: 0.2em;
-  background: none;
-  border: 1px solid gray;
-  border-radius: 45%;
+  composes: btnPrimaryOutline from global;
 }
-.btn:hover {
-  color: white;
-  background-color: black;
-}
+
 .input {
   display: none;
 }

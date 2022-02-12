@@ -5,12 +5,14 @@ import PropTypes from "prop-types";
 
 const Header = () => {
   return (
-    <header className={styles.header}>
-      <div className={styles.logo}>
-        <i className="fas fa-quidditch"></i>
-      </div>
-      <div className={styles.title}>
-        <h1>virtual postcard</h1>
+    <header>
+      <div className={styles.headerContainer}>
+        <span className={styles.logo}>
+          <i className="fas fa-quidditch"></i>
+        </span>
+        <div className={styles.title}>
+          <h1>Virtual Postcard</h1>
+        </div>
       </div>
     </header>
   );

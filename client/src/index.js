@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./app";
 import ImgUploader from "./service/image_uploader";
 import ImgFile from "./components/imgFile/imgFile";
+import "@fortawesome/fontawesome-free/js/all.js";
+import "./index.css";
 
 const imageUploader = new ImgUploader();
 const FileInput = (props) => (

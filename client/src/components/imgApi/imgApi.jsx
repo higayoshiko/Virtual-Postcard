@@ -14,6 +14,7 @@ const ImgApi = ({ onClickImg, onImgReset }) => {
   // call Unsplash
   function getData(e) {
     e.preventDefault();
+    setPage(1);
     try {
       Axios.get(url).then(
         (response) => {
@@ -29,17 +30,21 @@ const ImgApi = ({ onClickImg, onImgReset }) => {
   return (
     <form className={styles.form} onSubmit={getData}>
       <div className={styles.searchBar}>
-        <button className={styles.x} onClick={onImgReset}>
-          x
-        </button>
-        <input
-          className={styles.input}
-          type="text"
-          placeholder="Search..."
-          name="query"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
+        <div className={styles.inputWrapper}>
+          <input
+            className={styles.input}
+            type="text"
+            placeholder="Search..."
+            name="query"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </div>
+        <div className={styles.clearWrapper}>
+          <span className={styles.clear} onClick={() => setQuery("")}>
+            <i className="fa fa-times-circle"></i>
+          </span>
+        </div>
         <button className={styles.searchBtn} type="submit" onClick={getData}>
           Search
         </button>
@@ -50,39 +55,45 @@ const ImgApi = ({ onClickImg, onImgReset }) => {
 
       {/* get images and loop through */}
       <div className={styles.grid}>
-        {array.map((url) => {
-          return (
-            <div key={url.id}>
-              <img
-                src={url.urls.full}
-                alt="images"
-                onClick={onClickImg}
-                className={styles.img}
-              />
-            </div>
-          );
-        })}
+        {!array.length ? (
+          <div className={styles.gridResult}>No images</div>
+        ) : (
+          array.map((url) => {
+            return (
+              <div key={url.id}>
+                <img
+                  src={url.urls.full}
+                  alt="images"
+                  onClick={onClickImg}
+                  className={styles.img}
+                />
+              </div>
+            );
+          })
+        )}
       </div>
 
       {/*  previous and next buttons  */}
       <div className={styles.pageBtn}>
         <button
-          className={styles.button}
+          className={styles.navigateBtn}
           onClick={() => {
             if (page !== 1) {
               setPage((page) => page - 1);
             }
           }}
         >
+          <i className="fa fa-arrow-left"></i>
           Previous
         </button>
         <button
-          className={styles.button}
+          className={styles.navigateBtn}
           onClick={() => {
             setPage((page) => page + 1);
           }}
         >
           Next
+          <i className="fa fa-arrow-right"></i>
         </button>
       </div>
     </form>
