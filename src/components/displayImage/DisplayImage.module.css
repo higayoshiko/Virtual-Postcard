@@ -1,0 +1,16 @@
+.displayCtn {
+  width: 95%;
+  height: 100%;
+}
+.img {
+  border-radius: 5%;
+  padding: 1em;
+  width: 100%;
+  height: 90%;
+  margin-top: 1em;
+}
+
+.cardCtn {
+  height: 100%;
+  text-align: center;
+}

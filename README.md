@@ -1,14 +1,48 @@
-# voyage-tasks
+# Virtual Postcard
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+## Demo Link
+[Project Demo](https://chingu36-g12-virtual-postcard.herokuapp.com)
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+## Overview
+An application used to send greetings and pictures to friends via email.
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+## Features
+* Image search bar
+* Image upload
+* Personalized message/greeting
 
-> Own it & Make it your Own!
+## Technologies
+* React
+* Node/Express
+
+## Apis
+* Unsplash api
+* Google api
+
+## Dependencies
+[express](https://expressjs.com)\
+[body-parser](https://www.npmjs.com/package/body-parser)\
+[cors](https://www.npmjs.com/package/cors)\
+[nodemailer](https://nodemailer.com/about/)\
+[googleapis](https://www.npmjs.com/package/googleapis)\
+[axios](https://axios-http.com)
+
+## Install
+After installing [Node.js](https://nodejs.org/en/)
+> git clone https://github.com/chingu-voyages/v36-geckos-team-12.git \
+cd v36-geckos-team-12\
+npm install
+
+### Run react
+> npm start\
+Go to http://localhost:3000
+
+## Project Status
+This project has been completed.
+
+## Contributors
+* ejaman
+* dina-setiana
+* higayoshiko
+
+

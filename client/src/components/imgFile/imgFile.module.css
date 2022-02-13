@@ -1,0 +1,7 @@
+.btn {
+  composes: btnPrimaryOutline from global;
+}
+
+.input {
+  display: none;
+}

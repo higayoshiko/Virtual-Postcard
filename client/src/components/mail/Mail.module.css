@@ -1,0 +1,47 @@
+.form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.displayImg {
+  width: 100%;
+  height: 100%;
+}
+.resetimg {
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+}
+.email {
+  display: flex;
+  flex-direction: column;
+  width: 42%;
+  margin: auto;
+  padding: 0.5rem;
+}
+.input,
+.msg {
+  composes: input from global;
+}
+.msg {
+  height: 8em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-y: auto;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sendBtn {
+  composes: btn from global;
+  width: 6rem;
+  align-self: end;
+  margin-top: 1rem;
+}
+
+.searchBtn {
+  margin-left: 1rem;
+  composes: btnPrimaryOutline from global;
+}

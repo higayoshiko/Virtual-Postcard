@@ -1,0 +1,53 @@
+.headerContainer {
+  align-items: center;
+  display: flex;
+  margin: 2em 0;
+}
+
+.logo {
+  color: #0f093f;
+  font-size: 2em;
+  padding-right: 1em;
+}
+.title {
+  color: #6857dd;
+  width: 10em;
+  font-size: 1.1em;
+}
+
+.title > h1 {
+  margin: 0;
+}
+.info {
+  background: none;
+  border: 1px solid;
+  border-radius: 50%;
+  font-weight: bold;
+  align-self: end;
+}
+.info:hover {
+  color: white;
+  background-color: black;
+}
+
+.login,
+.logout {
+  float: right;
+  margin-top: 3em;
+  margin-right: 7em;
+}
+.logout {
+  float: right;
+  padding: 0 3em;
+}
+.a {
+  color: black;
+}
+.logoutBtn {
+  font-size: 1em;
+  padding: 0.3em 0.6em;
+  background: none;
+  border: 1px solid;
+  border-radius: 45%;
+  font-weight: bold;
+}
