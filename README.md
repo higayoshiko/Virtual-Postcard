@@ -20,12 +20,12 @@ An application used to send greetings and pictures to friends via email.
 * Google api
 
 ## Dependencies
-[express](https://expressjs.com)\
-[body-parser](https://www.npmjs.com/package/body-parser)\
-[cors](https://www.npmjs.com/package/cors)\
-[nodemailer](https://nodemailer.com/about/)\
-[googleapis](https://www.npmjs.com/package/googleapis)\
-[axios](https://axios-http.com)
+[Express](https://expressjs.com)\
+[Body-parser](https://www.npmjs.com/package/body-parser)\
+[Cors](https://www.npmjs.com/package/cors)\
+[Nodemailer](https://nodemailer.com/about/)\
+[Googleapis](https://www.npmjs.com/package/googleapis)\
+[Axios](https://axios-http.com)
 
 ## Install
 After installing [Node.js](https://nodejs.org/en/)
